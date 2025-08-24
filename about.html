@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Candid Empire</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html">
+                <img src="images/Copilot_20250821_223722.png" alt="Candid Empire Logo">
+            </a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="investments.html">INVESTMENTS</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>About Candid Empire</h1>
+            <p>Learn more about our mission, vision, and the team behind Candid Empire.</p>
+        </div>
+    </section>
+
+    <section class="about-us">
+        <div class="row">
+            <div class="about-col">
+                <h1>We are Candid Empire</h1>
+                <p>
+                    Candid Empire is a leading investment platform dedicated to helping individuals and businesses grow their wealth through smart, strategic investments. With a team of experienced financial experts and cutting-edge technology, we provide our clients with the tools and resources they need to make informed investment decisions.
+                    <br><br>
+                    Our platform offers a wide range of investment options, including stocks, bonds, mutual funds, real estate, cryptocurrencies, and more. We are committed to transparency, security, and customer satisfaction, ensuring that our clients have a seamless and rewarding investment experience.
+                    <br><br>
+                    Join us today and take the first step towards achieving your financial goals with Candid Empire.
+                </p>
+                <a href="contact.html" class="btn">Contact Us</a>
+            </div>
+            <div class="about-col">
+                <img src="images/about.jpg" alt="About Candid Empire">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
+</body>
+</html>

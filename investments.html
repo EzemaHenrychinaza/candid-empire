@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investments | Candid Empire</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html">
+                <img src="images/Copilot_20250821_223722.png" alt="Candid Empire Logo">
+            </a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="investments.html">INVESTMENTS</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>Our Investment Opportunities</h1>
+            <p>Discover a wide range of investment options tailored to your financial goals.</p>
+        </div>
+    </section>
+
+    <section class="investment">
+        <h1>Investment Options</h1>
+        <p>Choose from our diverse portfolio of investment opportunities:</p>
+        <div class="row">
+            <div class="investment-col">
+                <h3>Stocks</h3>
+                <p>Invest in top-performing stocks and ETFs with our expert guidance. Diversify your portfolio and maximize returns.</p>
+            </div>
+            <div class="investment-col">
+                <h3>Real Estate</h3>
+                <p>Explore lucrative real estate opportunities with our comprehensive market insights. Invest in residential, commercial, or rental properties.</p>
+            </div>
+            <div class="investment-col">
+                <h3>Cryptocurrency</h3>
+                <p>Navigate the world of cryptocurrencies with confidence. Our platform offers real-time data, analysis, and secure trading options for Bitcoin, Ethereum, and more.</p>
+            </div>
+            <div class="investment-col">
+                <h3>Mutual Funds</h3>
+                <p>Diversify your investments with professionally managed mutual funds. Choose from a variety of funds to suit your risk tolerance and financial goals.</p>
+            </div>
+            <div class="investment-col">
+                <h3>Bonds</h3>
+                <p>Invest in government and corporate bonds for stable returns. Our platform provides access to a wide range of bond options to help you build a secure portfolio.</p>
+            </div>
+            <div class="investment-col">
+                <h3>Livestock</h3>
+                <p>Invest in livestock and agricultural ventures for sustainable returns. Our platform connects you with profitable farming opportunities.</p>
+            </div>
+        </div>
+        <a href="investmentplans.html" class="btn">See Investment Plans</a>
+    </section>
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
+</body>
+</html>

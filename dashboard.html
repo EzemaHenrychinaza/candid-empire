@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard | Candid Empire</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: #f7f7f7;
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+        }
+        .dashboard-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            background: #222;
+            color: #fff;
+            width: 230px;
+            min-width: 180px;
+            padding: 30px 0 0 0;
+            position: relative;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.4em;
+            color: #b8860b;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0 0 0 20px;
+            margin: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 18px;
+        }
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.08em;
+            display: block;
+            padding: 8px 0;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        .sidebar ul li a:hover, .sidebar ul li.active a {
+            background: #b8860b;
+            color: #fff;
+        }
+        .sidebar .submenu {
+            margin-left: 15px;
+            margin-top: 5px;
+        }
+        .main-content {
+            flex: 1;
+            padding: 40px 5vw;
+        }
+        .balances-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2vw;
+            margin-bottom: 30px;
+        }
+        .balance-box {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            flex: 1 1 180px;
+            min-width: 180px;
+            padding: 25px 20px;
+            text-align: center;
+        }
+        .balance-title {
+            font-size: 1em;
+            color: #888;
+            margin-bottom: 8px;
+        }
+        .balance-amount {
+            font-size: 1.7em;
+            font-weight: bold;
+            color: #b8860b;
+        }
+        .bonus-upgrade-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2vw;
+            margin-bottom: 30px;
+        }
+        .bonus-box, .referral-box {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            flex: 1 1 300px;
+            min-width: 260px;
+            padding: 25px 20px;
+            margin-bottom: 20px;
+        }
+        .bonus-box h3, .referral-box h3 {
+            margin-top: 0;
+            color: #b8860b;
+        }
+        .upgrade-btn {
+            background: #b8860b;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 28px;
+            font-size: 1em;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .upgrade-btn:hover {
+            background: #222;
+        }
+        .referral-link-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .referral-link-input {
+            flex: 1;
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .copy-btn {
+            background: #b8860b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .copy-btn:hover {
+            background: #222;
+        }
+        @media (max-width: 900px) {
+            .dashboard-container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                min-width: unset;
+                padding: 15px 0 0 0;
+            }
+            .main-content {
+                padding: 20px 3vw;
+            }
+            .balances-row, .bonus-upgrade-row {
+                flex-direction: column;
+                gap: 18px;
+            }
+        }
+        .menu-toggle {
+    display: none;
+    position: fixed;
+    top: 18px;
+    left: 18px;
+    background: #b8860b;
+    color: #fff;
+    border: none;
+    font-size: 1.7em;
+    padding: 6px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 2001;
+}
+@media (max-width: 900px) {
+    .menu-toggle {
+        display: block;
+    }
+    .sidebar {
+        position: fixed;
+        left: -250px;
+        top: 0;
+        height: 100%;
+        z-index: 2000;
+        transition: left 0.3s;
+        width: 230px;
+    }
+    .sidebar.open {
+        left: 0;
+    }
+    .main-content {
+        padding-top: 60px;
+    }
+}
+@media (max-width: 900px) {
+    .main-content {
+        padding-top: 80px; /* Increased from 60px for more space */
+    }
+}
+    </style>
+</head>
+<body>
+    <button class="menu-toggle" id="menuToggleBtn">&#9776; Menu</button>
+<div class="dashboard-container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <ul>
+            <li class="active"><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="#">Deposit</a></li>
+            <li><a href="#">Withdraw</a></li>
+            <li><a href="#">Exchange</a></li>
+            <li>
+                <span style="color:#b8860b;font-weight:bold;">Investment Categories</span>
+                <ul class="submenu">
+                    <li><a href="#">Stocks</a></li>
+                    <li><a href="#">Real Estate</a></li>
+                    <li><a href="#">Cryptocurrency</a></li>
+                    <li><a href="#">Mutual Funds</a></li>
+                    <li><a href="#">Bonds</a></li>
+                    <li><a href="#">Livestock</a></li>
+                    <li><a href="#">Compounding</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Balances -->
+        <div class="balances-row">
+            <div class="balance-box">
+                <div class="balance-title">Available Balance (USD)</div>
+                <div class="balance-amount" id="available-balance">$0.00</div>
+            </div>
+            <div class="balance-box">
+                <div class="balance-title">Profit Balance (USD)</div>
+                <div class="balance-amount" id="profit-balance">$0.00</div>
+            </div>
+            <div class="balance-box">
+                <div class="balance-title">Deposit Balance (USD)</div>
+                <div class="balance-amount" id="deposit-balance">$0.00</div>
+            </div>
+            <div class="balance-box">
+                <div class="balance-title">Referral Earnings (USD)</div>
+                <div class="balance-amount" id="referral-balance">$0.00</div>
+            </div>
+        </div>
+        <!-- Bonus and Referral -->
+        <div class="bonus-upgrade-row">
+            <div class="bonus-box">
+                <h3>Start Receiving Bonuses</h3>
+                <p>Upgrade your account to unlock exclusive bonuses and higher returns.</p>
+                <button class="upgrade-btn">Upgrade</button>
+            </div>
+            <div class="referral-box">
+                <h3>Your Referral Link</h3>
+                <div class="referral-link-row">
+                    <input type="text" class="referral-link-input" id="referralLink" value="https://candideempire.com/register?ref=yourusername" readonly>
+                    <button class="copy-btn" onclick="copyReferralLink()">Copy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function copyReferralLink() {
+    var copyText = document.getElementById("referralLink");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+    document.execCommand("copy");
+    alert("Referral link copied: " + copyText.value);
+}
+</script>
+<script>
+document.getElementById('menuToggleBtn').onclick = function() {
+    document.querySelector('.sidebar').classList.toggle('open');
+    document.getElementById('sidebarOverlay').style.display = 
+        document.querySelector('.sidebar').classList.contains('open') ? 'block' : 'none';
+};
+document.getElementById('sidebarOverlay').onclick = function() {
+    document.querySelector('.sidebar').classList.remove('open');
+    this.style.display = 'none';
+};
+</script>
+</body>
+</html>

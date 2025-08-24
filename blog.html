@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Candid Empire</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html">
+                <img src="images/Copilot_20250821_223722.png" alt="Candid Empire Logo">
+            </a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="investments.html">INVESTMENTS</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>Our Blog</h1>
+            <p>Insights, tips, and news from the world of investments.</p>
+        </div>
+    </section>
+
+    <section class="blog">
+        <div class="row">
+            <div class="blog-col">
+                <h2>How to Start Investing: A Beginner’s Guide</h2>
+                <p>
+                    Learn the basics of investing, how to set your goals, and the best strategies to grow your wealth over time.
+                    <span class="more-text" style="display:none;">
+                        <br>
+                        This guide covers everything from understanding different asset classes to building a diversified portfolio. You'll also learn about risk management, setting realistic expectations, and how to avoid common mistakes as a beginner investor.
+                    </span>
+                </p>
+                <a href="javascript:void(0);" class="btn read-more-btn">Read More</a>
+            </div>
+            <div class="blog-col">
+                <h2>Top 5 Investment Opportunities in 2025</h2>
+                <p>
+                    Discover the most promising investment options for the coming year, including stocks, real estate, and crypto.
+                    <span class="more-text" style="display:none;">
+                        <br>
+                        Our experts analyze market trends to bring you the best opportunities for growth and diversification in 2025. Learn which sectors are expected to outperform and how to position your portfolio for success.
+                    </span>
+                </p>
+                <a href="javascript:void(0);" class="btn read-more-btn">Read More</a>
+            </div>
+            <div class="blog-col">
+                <h2>Understanding Risk and Reward</h2>
+                <p>
+                    Find out how to balance risk and reward in your portfolio and make smarter investment decisions.
+                    <span class="more-text" style="display:none;">
+                        <br>
+                        Learn about different risk profiles, how to assess your own risk tolerance, and strategies to optimize your returns while minimizing losses. This article will help you make informed choices for long-term financial growth.
+                    </span>
+                </p>
+                <a href="javascript:void(0);" class="btn read-more-btn">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+
+        // Read More functionality for all blog posts
+        document.querySelectorAll('.read-more-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var moreText = this.parentElement.querySelector('.more-text');
+                if (moreText.style.display === "none" || moreText.style.display === "") {
+                    moreText.style.display = "inline";
+                    this.textContent = "Read Less";
+                } else {
+                    moreText.style.display = "none";
+                    this.textContent = "Read More";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
