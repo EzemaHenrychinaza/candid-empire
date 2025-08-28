@@ -354,3 +354,31 @@ transform: translateX(-50%);
 .close {
   position: absolute; top: 10px; right: 20px; font-size: 28px; cursor: pointer; color: #b8860b;
 }
+ /*----- footer section -----*/
+ footer{
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 20px;
+    }
+    footer .icons{
+        margin: 20px 0;
+    }
+    footer .icons a{
+        text-decoration: none;
+        color: #fff;
+        margin: 0 10px;
+        font-size: 20px;
+        transition: 0.5s;
+    }
+    footer .icons a:hover{
+        color: goldenrod;
+    }
+    
